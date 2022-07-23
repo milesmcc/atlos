@@ -85,21 +85,21 @@
         <.live_component
           module={PlatformWeb.AdminlandLive.ActivityFeedLive}
           current_user={@current_user}
-          parent_socket={@socket}
+          parent_socket={@full_socket}
           id="activity-feed"
         />
       <% :upload -> %>
         <.live_component
           module={PlatformWeb.AdminlandLive.BulkUploadLive}
           current_user={@current_user}
-          parent_socket={@socket}
+          parent_socket={@full_socket}
           id="bulk-upload"
         />
       <% action when action in [:api, :api_new] -> %>
         <.live_component
           module={PlatformWeb.AdminlandLive.APITokenLive}
           show_creation_modal={@live_action == :api_new}
-          parent_socket={@socket}
+          parent_socket={@full_socket}
           id="api-tokens"
         />
     <% end %>
